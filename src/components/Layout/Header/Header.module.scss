@@ -1,0 +1,40 @@
+.root {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 72px;
+  background: #FAF76B;
+  box-shadow: 0 0 10px 5px #2f436849;
+
+  padding: 0 25px;
+}
+
+.nav {
+  height: 100%;
+  margin: 0 0 0 auto;
+}
+
+.navList {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  height: 100%;
+  margin: 0;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  text-decoration: none;
+  padding: 0 15px;
+
+  color: #2F4368;
+  font-size: 16px;
+  text-transform: uppercase;
+
+}
+
+.activeLink {
+  background: rgba(0, 0, 0, 0.143);
+}

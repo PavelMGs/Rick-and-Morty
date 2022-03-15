@@ -1,0 +1,38 @@
+.root {
+  display: flex;
+  box-shadow: 5px 5px 10px 5px #2f436884;
+
+  width: 400px;
+  height: 200px;
+
+  margin-bottom: 15px;
+
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.photoWrapper {
+  width: 50%;
+  height: 100%;
+}
+
+.photo {
+  width: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+
+.infoWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 24px 16px;
+
+  color: #646464;
+
+  & > span {
+    width: 100%;
+    margin-bottom: 1px;
+  }
+}

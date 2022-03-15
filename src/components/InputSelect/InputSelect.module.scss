@@ -1,0 +1,96 @@
+.root {
+  position: relative;
+  margin-bottom: 25px;
+  z-index: 1;
+  width: 260px;
+}
+
+.input {
+  position: relative;
+  font-size: 16px;
+  border: none;
+  outline: none;
+
+  box-shadow: 0px 0px 6px 3px #2f436884;
+  border-radius: 5px;
+
+  height: 24px;
+  width: 100%;
+
+  padding: 0 10px;
+
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #646464;
+}
+
+.optionsList {
+  display: none;
+  list-style-type: none;
+
+  position: absolute;
+  top: calc(100%);
+  left: 0;
+
+  background: white;
+  box-shadow: 0px 0px 6px 3px #2f436884;
+
+  padding: 10px 0;
+
+  border-radius: 5px;
+  width: 100%;
+
+  & > li {
+    height: 20px;
+    padding: 0 10px 10px;
+
+    & > button {
+      font-size: 16px;
+      text-transform: uppercase;
+      color: #646464;
+      width: 100%;
+
+      background: none;
+      border: none;
+      outline: none;
+
+      text-align: start;
+    }
+
+    &:hover {
+      background: rgb(201, 201, 201);
+    }
+  }
+}
+
+.optionsList.isOpen {
+  display: block;
+}
+
+.trigger {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  border: none;
+  background: none;
+  outline: none;
+
+  width: 100%;
+  height: 25px;
+
+  & > svg {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 25px;
+    transition: 0.2s ease-in;
+  }
+}
+
+.trigger.isOpen {
+  & > svg {
+    transform: rotate(180deg) translateY(50%);
+  }
+}
