@@ -2314,14 +2314,14 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".InputSelect-module__root__Luuf_ {\n  position: relative;\n  margin-bottom: 25px;\n  z-index: 1;\n  width: 260px;\n}\n\n.InputSelect-module__input__naHp_ {\n  position: relative;\n  font-size: 16px;\n  border: none;\n  outline: none;\n  box-shadow: 0px 0px 6px 3px #2f436884;\n  border-radius: 5px;\n  height: 24px;\n  width: 100%;\n  padding: 0 10px;\n  font-size: 16px;\n  text-transform: uppercase;\n  color: #646464;\n}\n\n.InputSelect-module__optionsList__aE0zL {\n  display: none;\n  list-style-type: none;\n  position: absolute;\n  top: 100%;\n  left: 0;\n  background: white;\n  box-shadow: 0px 0px 6px 3px #2f436884;\n  padding: 10px 0;\n  border-radius: 5px;\n  width: 100%;\n}\n.InputSelect-module__optionsList__aE0zL > li {\n  height: 20px;\n  padding: 0 10px 10px;\n}\n.InputSelect-module__optionsList__aE0zL > li > button {\n  font-size: 16px;\n  text-transform: uppercase;\n  color: #646464;\n  width: 100%;\n  background: none;\n  border: none;\n  outline: none;\n  text-align: start;\n}\n.InputSelect-module__optionsList__aE0zL > li:hover {\n  background: #c9c9c9;\n}\n\n.InputSelect-module__optionsList__aE0zL.InputSelect-module__isOpen__gZ8E7 {\n  display: block;\n}\n\n.InputSelect-module__trigger__qzzKV {\n  position: absolute;\n  top: 0;\n  left: 0;\n  border: none;\n  background: none;\n  outline: none;\n  width: 100%;\n  height: 25px;\n}\n.InputSelect-module__trigger__qzzKV > svg {\n  position: absolute;\n  top: 50%;\n  right: 10px;\n  transform: translateY(-50%);\n  width: 25px;\n  transition: 0.2s ease-in;\n}\n\n.InputSelect-module__trigger__qzzKV.InputSelect-module__isOpen__gZ8E7 > svg {\n  transform: rotate(180deg) translateY(50%);\n}", "",{"version":3,"sources":["webpack://./src/components/InputSelect/InputSelect.module.scss"],"names":[],"mappings":"AAAA;EACE,kBAAA;EACA,mBAAA;EACA,UAAA;EACA,YAAA;AACF;;AAEA;EACE,kBAAA;EACA,eAAA;EACA,YAAA;EACA,aAAA;EAEA,qCAAA;EACA,kBAAA;EAEA,YAAA;EACA,WAAA;EAEA,eAAA;EAEA,eAAA;EACA,yBAAA;EACA,cAAA;AAHF;;AAMA;EACE,aAAA;EACA,qBAAA;EAEA,kBAAA;EACA,SAAA;EACA,OAAA;EAEA,iBAAA;EACA,qCAAA;EAEA,eAAA;EAEA,kBAAA;EACA,WAAA;AAPF;AASE;EACE,YAAA;EACA,oBAAA;AAPJ;AASI;EACE,eAAA;EACA,yBAAA;EACA,cAAA;EACA,WAAA;EAEA,gBAAA;EACA,YAAA;EACA,aAAA;EAEA,iBAAA;AATN;AAYI;EACE,mBAAA;AAVN;;AAeA;EACE,cAAA;AAZF;;AAeA;EACE,kBAAA;EACA,MAAA;EACA,OAAA;EAEA,YAAA;EACA,gBAAA;EACA,aAAA;EAEA,WAAA;EACA,YAAA;AAdF;AAgBE;EACE,kBAAA;EACA,QAAA;EACA,WAAA;EACA,2BAAA;EACA,WAAA;EACA,wBAAA;AAdJ;;AAmBE;EACE,yCAAA;AAhBJ","sourcesContent":[".root {\r\n  position: relative;\r\n  margin-bottom: 25px;\r\n  z-index: 1;\r\n  width: 260px;\r\n}\r\n\r\n.input {\r\n  position: relative;\r\n  font-size: 16px;\r\n  border: none;\r\n  outline: none;\r\n\r\n  box-shadow: 0px 0px 6px 3px #2f436884;\r\n  border-radius: 5px;\r\n\r\n  height: 24px;\r\n  width: 100%;\r\n\r\n  padding: 0 10px;\r\n\r\n  font-size: 16px;\r\n  text-transform: uppercase;\r\n  color: #646464;\r\n}\r\n\r\n.optionsList {\r\n  display: none;\r\n  list-style-type: none;\r\n\r\n  position: absolute;\r\n  top: calc(100%);\r\n  left: 0;\r\n\r\n  background: white;\r\n  box-shadow: 0px 0px 6px 3px #2f436884;\r\n\r\n  padding: 10px 0;\r\n\r\n  border-radius: 5px;\r\n  width: 100%;\r\n\r\n  & > li {\r\n    height: 20px;\r\n    padding: 0 10px 10px;\r\n\r\n    & > button {\r\n      font-size: 16px;\r\n      text-transform: uppercase;\r\n      color: #646464;\r\n      width: 100%;\r\n\r\n      background: none;\r\n      border: none;\r\n      outline: none;\r\n\r\n      text-align: start;\r\n    }\r\n\r\n    &:hover {\r\n      background: rgb(201, 201, 201);\r\n    }\r\n  }\r\n}\r\n\r\n.optionsList.isOpen {\r\n  display: block;\r\n}\r\n\r\n.trigger {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n\r\n  border: none;\r\n  background: none;\r\n  outline: none;\r\n\r\n  width: 100%;\r\n  height: 25px;\r\n\r\n  & > svg {\r\n    position: absolute;\r\n    top: 50%;\r\n    right: 10px;\r\n    transform: translateY(-50%);\r\n    width: 25px;\r\n    transition: 0.2s ease-in;\r\n  }\r\n}\r\n\r\n.trigger.isOpen {\r\n  & > svg {\r\n    transform: rotate(180deg) translateY(50%);\r\n  }\r\n}\r\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".InputSelect-module__root__Luuf_ {\n  position: relative;\n  margin-bottom: 25px;\n  z-index: 1;\n  width: 260px;\n}\n\n.InputSelect-module__input__naHp_ {\n  position: relative;\n  font-size: 16px;\n  border: none;\n  outline: none;\n  box-shadow: 0px 0px 6px 3px #2f436884;\n  border-radius: 5px;\n  height: 24px;\n  width: 100%;\n  padding: 0 10px;\n  font-size: 16px;\n  text-transform: uppercase;\n  color: #646464;\n}\n\n.InputSelect-module__optionsList__aE0zL {\n  display: none;\n  list-style-type: none;\n  position: absolute;\n  top: 100%;\n  left: 0;\n  background: white;\n  box-shadow: 0px 0px 6px 3px #2f436884;\n  padding: 10px 0;\n  border-radius: 5px;\n  width: 100%;\n}\n.InputSelect-module__optionsList__aE0zL > li {\n  height: 20px;\n  padding: 0 10px 10px;\n}\n.InputSelect-module__optionsList__aE0zL > li > button {\n  font-size: 16px;\n  text-transform: uppercase;\n  color: #646464;\n  width: 100%;\n  background: none;\n  border: none;\n  outline: none;\n  text-align: start;\n}\n.InputSelect-module__optionsList__aE0zL > li:hover {\n  background: #c9c9c9;\n}\n\n.InputSelect-module__optionsList__aE0zL.InputSelect-module__isOpen__gZ8E7 {\n  display: block;\n}\n\n.InputSelect-module__cross__aQsXc {\n  position: absolute;\n  top: 50%;\n  right: 0;\n  transform: translateY(-50%);\n  border: none;\n  background: none;\n  outline: none;\n}\n\n.InputSelect-module__cross__aQsXc.InputSelect-module__isOpen__gZ8E7 {\n  display: block;\n}", "",{"version":3,"sources":["webpack://./src/components/InputSelect/InputSelect.module.scss"],"names":[],"mappings":"AAAA;EACE,kBAAA;EACA,mBAAA;EACA,UAAA;EACA,YAAA;AACF;;AAEA;EACE,kBAAA;EACA,eAAA;EACA,YAAA;EACA,aAAA;EAEA,qCAAA;EACA,kBAAA;EAEA,YAAA;EACA,WAAA;EAEA,eAAA;EAEA,eAAA;EACA,yBAAA;EACA,cAAA;AAHF;;AAMA;EACE,aAAA;EACA,qBAAA;EAEA,kBAAA;EACA,SAAA;EACA,OAAA;EAEA,iBAAA;EACA,qCAAA;EAEA,eAAA;EAEA,kBAAA;EACA,WAAA;AAPF;AASE;EACE,YAAA;EACA,oBAAA;AAPJ;AASI;EACE,eAAA;EACA,yBAAA;EACA,cAAA;EACA,WAAA;EAEA,gBAAA;EACA,YAAA;EACA,aAAA;EAEA,iBAAA;AATN;AAYI;EACE,mBAAA;AAVN;;AAeA;EACE,cAAA;AAZF;;AAeA;EACE,kBAAA;EACA,QAAA;EACA,QAAA;EAEA,2BAAA;EAEA,YAAA;EACA,gBAAA;EACA,aAAA;AAdF;;AAmBA;EACE,cAAA;AAhBF","sourcesContent":[".root {\r\n  position: relative;\r\n  margin-bottom: 25px;\r\n  z-index: 1;\r\n  width: 260px;\r\n}\r\n\r\n.input {\r\n  position: relative;\r\n  font-size: 16px;\r\n  border: none;\r\n  outline: none;\r\n\r\n  box-shadow: 0px 0px 6px 3px #2f436884;\r\n  border-radius: 5px;\r\n\r\n  height: 24px;\r\n  width: 100%;\r\n\r\n  padding: 0 10px;\r\n\r\n  font-size: 16px;\r\n  text-transform: uppercase;\r\n  color: #646464;\r\n}\r\n\r\n.optionsList {\r\n  display: none;\r\n  list-style-type: none;\r\n\r\n  position: absolute;\r\n  top: calc(100%);\r\n  left: 0;\r\n\r\n  background: white;\r\n  box-shadow: 0px 0px 6px 3px #2f436884;\r\n\r\n  padding: 10px 0;\r\n\r\n  border-radius: 5px;\r\n  width: 100%;\r\n\r\n  & > li {\r\n    height: 20px;\r\n    padding: 0 10px 10px;\r\n\r\n    & > button {\r\n      font-size: 16px;\r\n      text-transform: uppercase;\r\n      color: #646464;\r\n      width: 100%;\r\n\r\n      background: none;\r\n      border: none;\r\n      outline: none;\r\n\r\n      text-align: start;\r\n    }\r\n\r\n    &:hover {\r\n      background: rgb(201, 201, 201);\r\n    }\r\n  }\r\n}\r\n\r\n.optionsList.isOpen {\r\n  display: block;\r\n}\r\n\r\n.cross {\r\n  position: absolute;\r\n  top: 50%;\r\n  right: 0;\r\n\r\n  transform: translateY(-50%);\r\n\r\n  border: none;\r\n  background: none;\r\n  outline: none;\r\n\r\n  // height: 25px;\r\n}\r\n\r\n.cross.isOpen {\r\n  display: block;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"root": "InputSelect-module__root__Luuf_",
 	"input": "InputSelect-module__input__naHp_",
 	"optionsList": "InputSelect-module__optionsList__aE0zL",
 	"isOpen": "InputSelect-module__isOpen__gZ8E7",
-	"trigger": "InputSelect-module__trigger__qzzKV"
+	"cross": "InputSelect-module__cross__aQsXc"
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -35589,16 +35589,32 @@ var react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/reac
 var classnames_1 = __importDefault(__webpack_require__(/*! classnames */ "./node_modules/classnames/index.js"));
 var InputSelect_module_scss_1 = __importDefault(__webpack_require__(/*! ./InputSelect.module.scss */ "./src/components/InputSelect/InputSelect.module.scss"));
 var InputSelect = function (_a) {
-    var _b, _c;
-    var options = _a.options, className = _a.className, setValue = _a.setValue, _d = _a.value, value = _d === void 0 ? '' : _d, fieldName = _a.fieldName;
-    var _e = __read((0, react_1.useState)(false), 2), isOpen = _e[0], setIsOpen = _e[1];
+    var _b;
+    var options = _a.options, className = _a.className, setValue = _a.setValue, _c = _a.value, value = _c === void 0 ? '' : _c, fieldName = _a.fieldName;
+    var _d = __read((0, react_1.useState)(false), 2), isOpen = _d[0], setIsOpen = _d[1];
     var handleSetCurrent = function (option) {
+        setIsOpen(false);
         setValue(option, fieldName);
     };
-    return (react_1.default.createElement("div", { className: (0, classnames_1.default)(InputSelect_module_scss_1.default.root, className), onClick: function () { return setIsOpen(!isOpen); } },
-        react_1.default.createElement("input", { value: value || '', className: InputSelect_module_scss_1.default.input, onChange: function (e) { return e.preventDefault(); }, placeholder: fieldName }),
-        react_1.default.createElement("div", { className: (0, classnames_1.default)(InputSelect_module_scss_1.default.trigger, (_b = {}, _b[InputSelect_module_scss_1.default.isOpen] = isOpen, _b)) }),
-        react_1.default.createElement("ul", { className: (0, classnames_1.default)(InputSelect_module_scss_1.default.optionsList, (_c = {}, _c[InputSelect_module_scss_1.default.isOpen] = isOpen, _c)) }, options === null || options === void 0 ? void 0 : options.map(function (option) { return (react_1.default.createElement("li", { key: option },
+    var closeOnClick = function () {
+        setIsOpen(false);
+        document.removeEventListener('click', closeOnClick);
+    };
+    (0, react_1.useEffect)(function () {
+        if (isOpen) {
+            document.addEventListener('click', closeOnClick);
+        }
+        else {
+            document.removeEventListener('click', closeOnClick);
+        }
+        return function () {
+            document.removeEventListener('click', closeOnClick);
+        };
+    }, [isOpen]);
+    return (react_1.default.createElement("div", { className: (0, classnames_1.default)(InputSelect_module_scss_1.default.root, className) },
+        react_1.default.createElement("input", { value: value || '', className: InputSelect_module_scss_1.default.input, onChange: function (e) { return e.preventDefault(); }, placeholder: fieldName, onClick: function () { return setIsOpen(!isOpen); }, readOnly: true }),
+        react_1.default.createElement("button", { className: InputSelect_module_scss_1.default.cross, onClick: function () { return handleSetCurrent(null); } }, "x"),
+        react_1.default.createElement("ul", { className: (0, classnames_1.default)(InputSelect_module_scss_1.default.optionsList, (_b = {}, _b[InputSelect_module_scss_1.default.isOpen] = isOpen, _b)) }, options === null || options === void 0 ? void 0 : options.map(function (option) { return (react_1.default.createElement("li", { key: option },
             react_1.default.createElement("button", { onClick: function () { return handleSetCurrent(option); } }, option))); }))));
 };
 exports["default"] = InputSelect;
@@ -35780,26 +35796,49 @@ var Characters = function () {
     var characters = (0, effector_react_1.useStore)(characters_1.$characters);
     var _a = __read((0, react_router_dom_1.useSearchParams)(), 2), searchParams = _a[0], setSearchParams = _a[1];
     var setValue = function (value, fieldName, resetPage) {
-        var e_1, _a, _b;
+        var e_1, _a, _b, e_2, _c;
         if (resetPage === void 0) { resetPage = true; }
         var params = {};
-        try {
-            for (var _c = __values(searchParams.entries()), _d = _c.next(); !_d.done; _d = _c.next()) {
-                var pair = _d.value;
-                params[pair[0]] = pair[1];
-            }
-        }
-        catch (e_1_1) { e_1 = { error: e_1_1 }; }
-        finally {
+        if (value) {
             try {
-                if (_d && !_d.done && (_a = _c.return)) _a.call(_c);
+                for (var _d = __values(searchParams.entries()), _e = _d.next(); !_e.done; _e = _d.next()) {
+                    var pair = _e.value;
+                    params[pair[0]] = pair[1];
+                }
             }
-            finally { if (e_1) throw e_1.error; }
+            catch (e_1_1) { e_1 = { error: e_1_1 }; }
+            finally {
+                try {
+                    if (_e && !_e.done && (_a = _d.return)) _a.call(_d);
+                }
+                finally { if (e_1) throw e_1.error; }
+            }
+            if (resetPage) {
+                params.page = '1';
+            }
+            setSearchParams(__assign(__assign({}, params), (_b = {}, _b[fieldName] = value, _b)));
         }
-        if (resetPage) {
-            params.page = '1';
+        else {
+            try {
+                for (var _f = __values(searchParams.entries()), _g = _f.next(); !_g.done; _g = _f.next()) {
+                    var pair = _g.value;
+                    if (pair[0] !== fieldName) {
+                        params[pair[0]] = pair[1];
+                    }
+                }
+            }
+            catch (e_2_1) { e_2 = { error: e_2_1 }; }
+            finally {
+                try {
+                    if (_g && !_g.done && (_c = _f.return)) _c.call(_f);
+                }
+                finally { if (e_2) throw e_2.error; }
+            }
+            if (resetPage) {
+                params.page = '1';
+            }
+            setSearchParams(params);
         }
-        setSearchParams(__assign(__assign({}, params), (_b = {}, _b[fieldName] = value, _b)));
     };
     (0, react_1.useEffect)(function () {
         events.getCharactersFx({ searchParams: searchParams.toString() });
