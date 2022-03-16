@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import cn from 'classnames';
-import Arrow from '../assets/arrow.svg';
+import Cross from '../assets/cross.svg';
 import s from './InputSelect.module.scss';
 
 interface IInputSelect {
@@ -46,7 +46,7 @@ const InputSelect: React.FC<IInputSelect> = ({ options, className, setValue, val
         readOnly
       />
       <button className={s.cross} onClick={() => handleSetCurrent(null)}>
-        x
+        <Cross />
       </button>
       <ul className={cn(s.optionsList, { [s.isOpen]: isOpen })}>
         {options?.map((option) => (

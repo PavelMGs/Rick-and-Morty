@@ -1,6 +1,7 @@
 const path = require('path');
 const NODE_ENV = process.env.NODE_ENV;
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
   resolve: {
@@ -30,7 +31,6 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-
               modules: {
                 mode: 'local',
                 localIdentName: '[name]__[local]__[hash:base64:5]',
@@ -39,18 +39,23 @@ module.exports = {
             },
           },
           'sass-loader',
-        ]
+        ],
       },
       {
-        test: [/\.jpg$/, /\.png$/, /\.pdf$/, /\.svg$/],
-        use: 'url-loader'
-      }
-    ]
+        test: /\.svg/,
+        use: '@svgr/webpack',
+      },
+      {
+        test: [/\.jpg$/, /\.png$/, /\.pdf$/],
+        use: 'url-loader',
+      },
+    ],
   },
   plugins: [
     new HTMLWebpackPlugin({
       template: path.resolve(__dirname, 'public/index.html'),
     }),
+    new ESLintPlugin(),
   ],
   devServer: {
     port: 3000,

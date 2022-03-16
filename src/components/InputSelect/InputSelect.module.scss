@@ -21,7 +21,6 @@
 
   font-size: 16px;
   text-transform: uppercase;
-  color: #646464;
 }
 
 .optionsList {
@@ -47,7 +46,6 @@
     & > button {
       font-size: 16px;
       text-transform: uppercase;
-      color: #646464;
       width: 100%;
 
       background: none;
@@ -70,15 +68,23 @@
 .cross {
   position: absolute;
   top: 50%;
-  right: 0;
+  right: 10px;
 
   transform: translateY(-50%);
 
-  border: none;
-  background: none;
-  outline: none;
+  height: 12px;
+  width: 12px;
 
-  // height: 25px;
+  & > svg {
+    height: 12px;
+    width: 12px;
+
+    fill: 'white';
+
+    & > path {
+      fill: white;
+    }
+  }
 }
 
 .cross.isOpen {

@@ -5,7 +5,15 @@ const host = "https://rickandmortyapi.com/api/";
 
 const getFx = createEffect<{ endpoint: string; query?: string }, any >(async ({ endpoint, query = '' }) => {
   try {
-    const result = await axios.get(host + endpoint + query);
+    let url = host;
+    if (endpoint.startsWith(host)) {
+      url = endpoint;
+      console.log(url)
+    } else {
+      url += endpoint;
+    }
+    url += query;
+    const result = await axios.get(url);
     return result.data;
   } catch (error) {
     console.log(
