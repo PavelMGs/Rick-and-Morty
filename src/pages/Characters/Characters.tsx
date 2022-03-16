@@ -12,15 +12,27 @@ const Characters = () => {
   const characters = useStore($characters);
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const setValue = (value: string, fieldName: string, resetPage = true) => {
+  const setValue = (value: string | null, fieldName: string, resetPage = true) => {
     const params: { [x: string]: string } = {};
-    for (const pair of searchParams.entries()) {
-      params[pair[0]] = pair[1];
+    if (value) {
+      for (const pair of searchParams.entries()) {
+        params[pair[0]] = pair[1];
+      }
+      if (resetPage) {
+        params.page = '1';
+      }
+      setSearchParams({ ...params, [fieldName]: value });
+    } else {
+      for (const pair of searchParams.entries()) {
+        if (pair[0] !== fieldName) {
+          params[pair[0]] = pair[1];
+        }
+      }
+      if (resetPage) {
+        params.page = '1';
+      }
+      setSearchParams(params);
     }
-    if (resetPage) {
-      params.page = '1';
-    }
-    setSearchParams({ ...params, [fieldName]: value });
   }
 
   useEffect(() => {

@@ -9,7 +9,7 @@ const status = ['alive', 'dead', 'unknown'];
 const species = ['human', 'alien', 'humanoid', 'mythological creature', 'cronenberg', 'animal', 'robot', 'unknown']
 
 interface IFilter {
-  setSearchParams: (value: string, fieldName: string) => void;
+  setSearchParams: (value: string | null, fieldName: string) => void;
   searchParams: URLSearchParams;
 }
 
