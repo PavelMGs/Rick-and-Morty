@@ -9,9 +9,10 @@ interface IInputSelect {
   setValue: (option: string | null, fieldName: string) => void;
   value?: string;
   fieldName: string;
+  zIndex?: number;
 }
 
-const InputSelect: React.FC<IInputSelect> = ({ options, className, setValue, value = '', fieldName }) => {
+const InputSelect: React.FC<IInputSelect> = ({ options, className, setValue, value = '', fieldName, zIndex = 0 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleSetCurrent = (option: string | null) => {
@@ -36,7 +37,7 @@ const InputSelect: React.FC<IInputSelect> = ({ options, className, setValue, val
   }, [isOpen])
 
   return (
-    <div className={cn(s.root, className)}>
+    <div className={cn(s.root, className)} style={{ zIndex }}>
       <input
         value={value || ''}
         className={s.input}

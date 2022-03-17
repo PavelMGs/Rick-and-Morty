@@ -35921,8 +35921,8 @@ var species = [
 var Filter = function (_a) {
     var setSearchParams = _a.setSearchParams, searchParams = _a.searchParams;
     return (react_1.default.createElement("div", { className: Filter_module_scss_1.default.root },
-        react_1.default.createElement(InputSelect_1.default, { options: species, setValue: setSearchParams, fieldName: "species", className: Filter_module_scss_1.default.filter, value: searchParams.get('species') || '' }),
-        react_1.default.createElement(InputSelect_1.default, { options: status, setValue: setSearchParams, fieldName: "status", className: Filter_module_scss_1.default.filter, value: searchParams.get('status') || '' }),
+        react_1.default.createElement(InputSelect_1.default, { options: species, setValue: setSearchParams, fieldName: "species", className: Filter_module_scss_1.default.filter, value: searchParams.get('species') || '', zIndex: 2 }),
+        react_1.default.createElement(InputSelect_1.default, { options: status, setValue: setSearchParams, fieldName: "status", className: Filter_module_scss_1.default.filter, value: searchParams.get('status') || '', zIndex: 1 }),
         react_1.default.createElement(InputSelect_1.default, { options: gender, setValue: setSearchParams, fieldName: "gender", className: Filter_module_scss_1.default.filter, value: searchParams.get('gender') || '' })));
 };
 exports["default"] = (0, react_1.memo)(Filter);
@@ -36089,8 +36089,8 @@ var cross_svg_1 = __importDefault(__webpack_require__(/*! ../assets/cross.svg */
 var InputSelect_module_scss_1 = __importDefault(__webpack_require__(/*! ./InputSelect.module.scss */ "./src/components/InputSelect/InputSelect.module.scss"));
 var InputSelect = function (_a) {
     var _b;
-    var options = _a.options, className = _a.className, setValue = _a.setValue, _c = _a.value, value = _c === void 0 ? '' : _c, fieldName = _a.fieldName;
-    var _d = __read((0, react_1.useState)(false), 2), isOpen = _d[0], setIsOpen = _d[1];
+    var options = _a.options, className = _a.className, setValue = _a.setValue, _c = _a.value, value = _c === void 0 ? '' : _c, fieldName = _a.fieldName, _d = _a.zIndex, zIndex = _d === void 0 ? 0 : _d;
+    var _e = __read((0, react_1.useState)(false), 2), isOpen = _e[0], setIsOpen = _e[1];
     var handleSetCurrent = function (option) {
         setIsOpen(false);
         setValue(option, fieldName);
@@ -36110,7 +36110,7 @@ var InputSelect = function (_a) {
             document.removeEventListener('click', closeOnClick);
         };
     }, [isOpen]);
-    return (react_1.default.createElement("div", { className: (0, classnames_1.default)(InputSelect_module_scss_1.default.root, className) },
+    return (react_1.default.createElement("div", { className: (0, classnames_1.default)(InputSelect_module_scss_1.default.root, className), style: { zIndex: zIndex } },
         react_1.default.createElement("input", { value: value || '', className: InputSelect_module_scss_1.default.input, onChange: function (e) { return e.preventDefault(); }, placeholder: fieldName, onClick: function () { return setIsOpen(!isOpen); }, readOnly: true }),
         react_1.default.createElement("button", { className: InputSelect_module_scss_1.default.cross, onClick: function () { return handleSetCurrent(null); } },
             react_1.default.createElement(cross_svg_1.default, null)),

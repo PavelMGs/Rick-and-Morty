@@ -30,6 +30,7 @@ const Filter: React.FC<IFilter> = ({ setSearchParams, searchParams }) => {
         fieldName="species"
         className={s.filter}
         value={searchParams.get('species') || ''}
+        zIndex={2}
       />
       <InputSelect
         options={status}
@@ -37,6 +38,7 @@ const Filter: React.FC<IFilter> = ({ setSearchParams, searchParams }) => {
         fieldName="status"
         className={s.filter}
         value={searchParams.get('status') || ''}
+        zIndex={1}
       />
       <InputSelect
         options={gender}
