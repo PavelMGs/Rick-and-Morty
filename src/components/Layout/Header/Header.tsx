@@ -18,10 +18,10 @@ const Header = () => {
           </li>
           <li>
             <NavLink
-              to="/episodes"
+              to="/watch-list"
               className={({ isActive }) => cn(s.link, { [s.activeLink]: isActive })}
             >
-              Episodes
+              Watch list
             </NavLink>
           </li>
         </ul>

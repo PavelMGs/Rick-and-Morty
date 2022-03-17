@@ -1,0 +1,32 @@
+.root {
+  display: grid;
+  grid-template-columns: 20% 20% 60%;
+  height: 16px;
+
+  margin-bottom: 5px;
+
+  & > span {
+    grid-column-start: 1;
+  }
+
+  & > button {
+    grid-column-start: 2;
+    margin-left: 5px;
+    height: 12px;
+    & > svg {
+      width: 12px;
+      height: 12px;
+    }
+  }
+}
+
+.watched {
+  text-decoration: line-through;
+}
+
+@media(max-width: 1024px) {
+  .root {
+    display: flex;
+    align-items: center;
+  }
+}

@@ -8,3 +8,10 @@
 .filter {
   margin-right: 15px;
 }
+
+@media(max-width: 480px) {
+  .root {
+    flex-direction: column;
+    align-items: center;
+  }
+}

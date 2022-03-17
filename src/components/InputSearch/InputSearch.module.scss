@@ -2,7 +2,7 @@
   position: relative;
   margin-bottom: 25px;
   z-index: 1;
-  width: 260px;
+  width: 400px;
 }
 
 .input {
@@ -20,10 +20,9 @@
   padding: 0 10px;
 
   font-size: 16px;
-  text-transform: uppercase;
 }
 
-.optionsList {
+.itemsList {
   display: none;
   list-style-type: none;
 
@@ -40,12 +39,10 @@
   width: 100%;
 
   & > li {
-    height: 20px;
     padding: 0 10px 10px;
 
     & > button {
       font-size: 16px;
-      text-transform: uppercase;
       width: 100%;
 
       background: none;
@@ -61,7 +58,7 @@
   }
 }
 
-.optionsList.isOpen {
+.itemsList.isOpen {
   display: block;
 }
 
@@ -91,9 +88,42 @@
   display: block;
 }
 
+.submitButton {
+  position: absolute;
+  top: 50%;
+  right: -80px;
 
-@media(max-width: 480px) {
+  border-radius: 5px;
+  background: #FAF76B;
+  box-shadow: 0px 0px 2px #2f436884;
+  height: 100%;
+
+  transform: translateY(-50%);
+  width: fit-content;
+
+  z-index: -1;
+
+  &:active {
+    box-shadow: inset 0px 0px 2px #2f436884;
+  }
+}
+
+.error {
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  color: #2F4368;
+}
+
+@media(max-width: 1024px) {
   .root {
-    width: 280px;
+    width: 300px;
+
+    margin-bottom: 80px;
+  }
+  .submitButton {
+    left: 0;
+    right: 0;
+    top: 65px;
   }
 }

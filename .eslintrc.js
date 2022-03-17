@@ -17,6 +17,17 @@ module.exports = {
   plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
     semi: ['error', 'always'],
-    'prettier/prettier': 'error',
+    'prettier/prettier': 'error', '@typescript-eslint/no-unused-vars': [
+      'warn',
+      {
+        // We don't want unused variables (noise) - XXX Note that this will be a duplicate of "no-unused-vars" rule
+        vars: 'all',
+        // Sometimes it's useful to have unused arguments for later use, such as describing what args are available (DX)
+        args: 'none',
+        //  Sometimes it's useful to have unused props for later use, such as describing what props are available (DX)
+        ignoreRestSiblings: true,
+        argsIgnorePattern: '^_',
+      },
+    ],
   },
 };

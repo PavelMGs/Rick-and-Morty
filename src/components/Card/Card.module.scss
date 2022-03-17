@@ -33,3 +33,14 @@
     margin-bottom: 1px;
   }
 }
+
+@media(max-width: 480px) {
+  .root {
+    width: 280px;
+    height: 140px;
+  }
+
+  .infoWrapper {
+    padding: 12px 8px;
+  }
+}

@@ -38,3 +38,23 @@
 .activeLink {
   background: rgba(0, 0, 0, 0.143);
 }
+@media(max-width: 1024px) {
+  .root {
+    padding: 0;
+  }
+  .nav {
+    margin: 0;
+    width: 100%;
+  }
+  .navList {
+    display: flex;
+    justify-content: stretch;
+    padding: 0;
+    width: 100%;
+  }
+  .link {
+    display: flex;
+    justify-content: center;
+    width: 50vw;
+  }
+}

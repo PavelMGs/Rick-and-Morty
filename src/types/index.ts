@@ -45,3 +45,5 @@ export type Episodes = {
   info: Info,
   results: Episode[];
 }
+
+export type WatchStatus = 'unwatched' | 'watched';

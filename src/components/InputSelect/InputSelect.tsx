@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import cn from 'classnames';
 import Cross from '../assets/cross.svg';
 import s from './InputSelect.module.scss';
@@ -59,4 +59,4 @@ const InputSelect: React.FC<IInputSelect> = ({ options, className, setValue, val
   );
 };
 
-export default InputSelect;
+export default memo(InputSelect);
