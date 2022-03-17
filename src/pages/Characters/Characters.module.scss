@@ -12,6 +12,7 @@
 }
 
 .pagination {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,6 +21,7 @@
   list-style-type: none;
 
   margin: 25px 0;
+  padding: 0;
 }
 
 .page {
@@ -39,6 +41,28 @@
   box-shadow: 0px 0px 3px 2px #2f4368e7;
 }
 
-.controlsPagination {
+.controlsPagination, .controlsPaginationN {
   font-size: 20px;
+}
+
+@media(max-width: 600px) {
+  .page {
+    height: 20px;
+    width: 20px;
+    font-size: 16px;
+  }
+  .controlsPagination {
+    position: absolute;
+    top: 16px;
+    font-size: 20px;
+  }
+  .controlsPagination:nth-child(1) {
+    left: 0;
+  }
+  .controlsPaginationN {
+    position: absolute;
+    top: 16px;
+    font-size: 20px;
+    right: 0;
+  }
 }

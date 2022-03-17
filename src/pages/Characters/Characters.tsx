@@ -62,7 +62,7 @@ const Characters = () => {
         pageClassName={s.page}
         activeClassName={s.activePagination}
         previousClassName={s.controlsPagination}
-        nextClassName={s.controlsPagination}
+        nextClassName={s.controlsPaginationN}
         breakClassName={s.controlsPagination}
       />
     </div>
