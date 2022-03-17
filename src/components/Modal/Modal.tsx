@@ -57,7 +57,12 @@ const Modal: React.FC<IModal> = ({ character, isOpen, close }) => {
             {episodesInfo &&
               episodesInfo?.map((ep) => (
                 <li className={s.episodeItem} key={ep.id + 'profilekey'}>
-                  {ep.id}
+                  <span>
+                    <b>{ep.episode}</b> - {ep.name}.
+                  </span>{' '}
+                  <span>
+                    <b>Air date:</b> {ep.air_date}
+                  </span>
                 </li>
               ))}
           </ul>

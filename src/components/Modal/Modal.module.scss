@@ -70,6 +70,7 @@
   align-items: center;
 
   height: 50%;
+  width: 100%;
   box-shadow: 0px -10px 10px -5px #2f436849;
 
   padding: 0 16px;
@@ -83,11 +84,26 @@
 
 .episodesList {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
 
   height: 100%;
+  width: 100%;
 
   list-style: none;
   margin: 0;
   padding: 0;
+
+  overflow: scroll;
+
+  & > li {
+    margin-bottom: 5px;
+    display: grid;
+    grid-template-columns: 50% 20% 30%;
+    & > span:nth-child(1) {
+      grid-column-start: 0;
+    }
+    & > span:nth-child(2) {
+      grid-column-start: 3;
+    }
+  }
 }
