@@ -18,8 +18,6 @@
   width: 100%;
 
   padding: 0 10px;
-
-  font-size: 16px;
 }
 
 .itemsList {
@@ -125,5 +123,14 @@
     left: 0;
     right: 0;
     top: 65px;
+  }
+}
+
+@media(max-width: 340px) {
+  .root {
+    width: 280px;
+  }
+  .input {
+    font-size: 14px;
   }
 }
