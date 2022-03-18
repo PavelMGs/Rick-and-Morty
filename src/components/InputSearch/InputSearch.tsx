@@ -39,6 +39,7 @@ const InputSearch: React.FC<IInputSearch> = ({ list, className = '', setFilterSt
   const handleAddToList = () => {
     if (list.length === 1) {
       submitValue(list[0]);
+      handleOnChange('');
     } else {
       setError('Choose an episode');
     }

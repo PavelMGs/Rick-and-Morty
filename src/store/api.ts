@@ -1,5 +1,5 @@
 import axios from "axios";
-import { createEffect } from "./rootDomain";
+import { createEffect, sample } from "./rootDomain";
 
 const host = "https://rickandmortyapi.com/api/";
 
@@ -8,7 +8,6 @@ const getFx = createEffect<{ endpoint: string; query?: string }, any >(async ({ 
     let url = host;
     if (endpoint.startsWith(host)) {
       url = endpoint;
-      console.log(url)
     } else {
       url += endpoint;
     }
@@ -19,12 +18,18 @@ const getFx = createEffect<{ endpoint: string; query?: string }, any >(async ({ 
     console.log(
       "---------------------------",
       "\n",
-      error,
+      error.response.data.error,
       "\n",
       "---------------------------"
     );
+    return error.response.data.error;
   }
 });
+
+sample({
+  clock: getFx.failData,
+  target: createEffect((failData) => {throw new Error(failData.response.data)})
+})
 
 const API = {
   get: getFx,

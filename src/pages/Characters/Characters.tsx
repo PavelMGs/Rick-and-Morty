@@ -33,40 +33,44 @@ const Characters = () => {
       }
       setSearchParams(params);
     }
-  }
+  };
 
   useEffect(() => {
-    events.getCharactersFx({ searchParams: searchParams.toString() })
+    events.getCharactersFx({ searchParams: searchParams.toString() });
   }, [searchParams]);
 
   return (
     <div className={s.root}>
       <Filter setSearchParams={setValue} searchParams={searchParams} />
-      <div className={s.Cards}>
-        {
-          characters?.results.map((character) => (
-            <Card character={character} key={character.id} />
-          ))
-        }
-      </div>
-      <ReactPaginate
-        initialPage={+(searchParams.get('page') || 1) - 1}
-        breakLabel="..."
-        nextLabel="next >"
-        onPageChange={(e) => setValue(`${e.selected + 1}`, 'page', false)}
-        pageRangeDisplayed={3}
-        pageCount={characters?.info.pages || 0}
-        previousLabel="< previous"
-        renderOnZeroPageCount={() => null}
-        className={s.pagination}
-        pageClassName={s.page}
-        activeClassName={s.activePagination}
-        previousClassName={s.controlsPagination}
-        nextClassName={s.controlsPaginationN}
-        breakClassName={s.controlsPagination}
-      />
+      {typeof characters === 'string' ? (
+        <div className={s.noData}>{characters}</div>
+      ) : (
+        <>
+          <div className={s.Cards}>
+            {characters?.results.map((character) => (
+              <Card character={character} key={character.id} />
+            ))}
+          </div>
+          <ReactPaginate
+            initialPage={+(searchParams.get('page') || 1) - 1}
+            breakLabel="..."
+            nextLabel="next >"
+            onPageChange={(e) => setValue(`${e.selected + 1}`, 'page', false)}
+            pageRangeDisplayed={3}
+            pageCount={characters?.info.pages || 0}
+            previousLabel="< previous"
+            renderOnZeroPageCount={() => null}
+            className={s.pagination}
+            pageClassName={s.page}
+            activeClassName={s.activePagination}
+            previousClassName={s.controlsPagination}
+            nextClassName={s.controlsPaginationN}
+            breakClassName={s.controlsPagination}
+          />
+        </>
+      )}
     </div>
-  )
-}
+  );
+};
 
 export default memo(Characters);
