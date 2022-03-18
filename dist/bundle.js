@@ -36013,6 +36013,7 @@ var InputSearch = function (_a) {
     var handleAddToList = function () {
         if (list.length === 1) {
             submitValue(list[0]);
+            handleOnChange('');
         }
         else {
             setError('Choose an episode');
@@ -36492,8 +36493,9 @@ var Characters = function () {
     }, [searchParams]);
     return (react_1.default.createElement("div", { className: Characters_module_scss_1.default.root },
         react_1.default.createElement(Filter_1.default, { setSearchParams: setValue, searchParams: searchParams }),
-        react_1.default.createElement("div", { className: Characters_module_scss_1.default.Cards }, characters === null || characters === void 0 ? void 0 : characters.results.map(function (character) { return (react_1.default.createElement(Card_1.default, { character: character, key: character.id })); })),
-        react_1.default.createElement(react_paginate_1.default, { initialPage: +(searchParams.get('page') || 1) - 1, breakLabel: "...", nextLabel: "next >", onPageChange: function (e) { return setValue("".concat(e.selected + 1), 'page', false); }, pageRangeDisplayed: 3, pageCount: (characters === null || characters === void 0 ? void 0 : characters.info.pages) || 0, previousLabel: "< previous", renderOnZeroPageCount: function () { return null; }, className: Characters_module_scss_1.default.pagination, pageClassName: Characters_module_scss_1.default.page, activeClassName: Characters_module_scss_1.default.activePagination, previousClassName: Characters_module_scss_1.default.controlsPagination, nextClassName: Characters_module_scss_1.default.controlsPaginationN, breakClassName: Characters_module_scss_1.default.controlsPagination })));
+        typeof characters === 'string' ? (react_1.default.createElement("div", { className: Characters_module_scss_1.default.noData }, characters)) : (react_1.default.createElement(react_1.default.Fragment, null,
+            react_1.default.createElement("div", { className: Characters_module_scss_1.default.Cards }, characters === null || characters === void 0 ? void 0 : characters.results.map(function (character) { return (react_1.default.createElement(Card_1.default, { character: character, key: character.id })); })),
+            react_1.default.createElement(react_paginate_1.default, { initialPage: +(searchParams.get('page') || 1) - 1, breakLabel: "...", nextLabel: "next >", onPageChange: function (e) { return setValue("".concat(e.selected + 1), 'page', false); }, pageRangeDisplayed: 3, pageCount: (characters === null || characters === void 0 ? void 0 : characters.info.pages) || 0, previousLabel: "< previous", renderOnZeroPageCount: function () { return null; }, className: Characters_module_scss_1.default.pagination, pageClassName: Characters_module_scss_1.default.page, activeClassName: Characters_module_scss_1.default.activePagination, previousClassName: Characters_module_scss_1.default.controlsPagination, nextClassName: Characters_module_scss_1.default.controlsPaginationN, breakClassName: Characters_module_scss_1.default.controlsPagination })))));
 };
 exports["default"] = (0, react_1.memo)(Characters);
 
@@ -36640,7 +36642,6 @@ var getFx = (0, rootDomain_1.createEffect)(function (_a) {
                     url = host;
                     if (endpoint.startsWith(host)) {
                         url = endpoint;
-                        console.log(url);
                     }
                     else {
                         url += endpoint;
@@ -36652,12 +36653,16 @@ var getFx = (0, rootDomain_1.createEffect)(function (_a) {
                     return [2 /*return*/, result.data];
                 case 2:
                     error_1 = _c.sent();
-                    console.log("---------------------------", "\n", error_1, "\n", "---------------------------");
-                    return [3 /*break*/, 3];
+                    console.log("---------------------------", "\n", error_1.response.data.error, "\n", "---------------------------");
+                    return [2 /*return*/, error_1.response.data.error];
                 case 3: return [2 /*return*/];
             }
         });
     });
+});
+(0, rootDomain_1.sample)({
+    clock: getFx.failData,
+    target: (0, rootDomain_1.createEffect)(function (failData) { throw new Error(failData.response.data); })
 });
 var API = {
     get: getFx,
@@ -36721,10 +36726,12 @@ var rootDomain_1 = __webpack_require__(/*! ./rootDomain */ "./src/store/rootDoma
 exports.getCharactersFx = (0, rootDomain_1.createEffect)(function (_a) {
     var searchParams = _a.searchParams;
     return __awaiter(void 0, void 0, void 0, function () { return __generator(this, function (_b) {
-        return [2 /*return*/, api_1.default.get({ endpoint: "character", query: "?".concat(searchParams) })];
+        return [2 /*return*/, api_1.default.get({ endpoint: 'character', query: "?".concat(searchParams) })];
     }); });
 });
-exports.$characters = (0, rootDomain_1.createStore)(null).on(exports.getCharactersFx.doneData, function (_, characters) { return characters; });
+exports.$characters = (0, rootDomain_1.createStore)('No data here')
+    .on(exports.getCharactersFx.doneData, function (_, characters) { return characters; })
+    .on(exports.getCharactersFx.failData, function (_, fail) { return fail.error; });
 
 
 /***/ }),
