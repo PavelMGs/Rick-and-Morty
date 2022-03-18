@@ -1,7 +1,6 @@
 .root {
   display: grid;
   grid-template-columns: 20% 20% 60%;
-  height: 16px;
 
   margin-bottom: 5px;
 
@@ -35,11 +34,5 @@
   .root {
     display: flex;
     align-items: center;
-  }
-}
-
-@media(max-width: 340px) {
-  .root {
-    height: 32px;
   }
 }
